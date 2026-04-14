@@ -1,0 +1,44 @@
+{
+  "name": "gbc-analytics-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "description": "RetailCRM analytics dashboard with Supabase sync, Vercel cron, and Telegram alerts.",
+  "author": "Aleksandr Mordvinov",
+  "homepage": "https://scanovich.ai/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FUYOH666/gbc-analytics-dashboard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FUYOH666/gbc-analytics-dashboard/issues"
+  },
+  "scripts": {
+    "dev": "next dev --port 3001",
+    "build": "next build",
+    "start": "next start --port 3001",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "latest",
+    "clsx": "latest",
+    "date-fns": "latest",
+    "lucide-react": "latest",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "recharts": "latest",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "latest",
+    "typescript": "latest",
+    "vitest": "latest"
+  }
+}
