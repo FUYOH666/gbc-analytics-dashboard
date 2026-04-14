@@ -13,3 +13,4 @@ coverage
 *.key
 credentials.*
 .vercel
+.private/

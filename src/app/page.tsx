@@ -13,6 +13,7 @@ function formatMoney(value: number) {
 
 export default async function HomePage() {
   const dashboard = await getDashboardData();
+  const showManualActions = process.env.NODE_ENV !== "production";
 
   const kpiItems =
     dashboard.state === "ready"
@@ -79,18 +80,20 @@ export default async function HomePage() {
             foundation под Telegram alerts.
           </p>
         </div>
-        <div className="actions">
-          <form action={runManualImportAction}>
-            <button className="button secondary" type="submit">
-              Import mock orders
-            </button>
-          </form>
-          <form action={runManualSyncAction}>
-            <button className="button" type="submit">
-              Run manual sync
-            </button>
-          </form>
-        </div>
+        {showManualActions ? (
+          <div className="actions">
+            <form action={runManualImportAction}>
+              <button className="button secondary" type="submit">
+                Import mock orders
+              </button>
+            </form>
+            <form action={runManualSyncAction}>
+              <button className="button" type="submit">
+                Run manual sync
+              </button>
+            </form>
+          </div>
+        ) : null}
       </header>
 
       <KpiCards items={kpiItems} />

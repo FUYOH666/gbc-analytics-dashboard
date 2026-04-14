@@ -96,6 +96,12 @@ pnpm build
 - После этого проект сам отправляет сообщения, если в `RetailCRM` появляются или синхронизируются заказы выше порога `HIGH_VALUE_THRESHOLD_KZT`.
 - Дополнительно описывать сложный Telegram UX не нужно, потому что в текущем проекте это не продуктовый интерфейс, а operational alert channel.
 
+## Public demo behavior
+
+- Production deployment intentionally works as a read-only showcase from the UI.
+- Manual `import` and `sync` controls are available in local development, but hidden in production.
+- This keeps the public demo cleaner and prevents anonymous visitors from triggering write operations.
+
 ## Основные маршруты
 
 - `GET /api/healthz` — базовый health check
