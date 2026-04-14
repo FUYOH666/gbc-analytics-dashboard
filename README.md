@@ -4,6 +4,11 @@
 
 Проект оформлен как публичный demo-case с упором на repeatable integrations, operational visibility и понятную бизнес-ценность.
 
+## Live demo
+
+- Production: [gbc-analytics-dashboard-teal.vercel.app](https://gbc-analytics-dashboard-teal.vercel.app/)
+- GitHub: [FUYOH666/gbc-analytics-dashboard](https://github.com/FUYOH666/gbc-analytics-dashboard)
+
 ## Что реализовано
 
 - repeatable import `mock_orders.json` в `RetailCRM`
@@ -108,6 +113,8 @@ pnpm build
 4. Задеплоить проект на `Vercel`.
 5. Перенести env из `.env.example`.
 6. Убедиться, что cron ходит в `/api/sync` с `CRON_SECRET`.
+
+Для `Vercel Hobby` в проекте используется daily cron. Более частый hourly cron потребует `Pro` план.
 
 ## Public repo hygiene
 
