@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="320" viewBox="0 0 640 320" role="img" aria-label="Stylized Telegram alert preview">
+  <rect width="640" height="320" rx="16" fill="#0f172a"/>
+  <rect x="48" y="48" width="544" height="224" rx="12" fill="#1e293b" stroke="#334155"/>
+  <circle cx="88" cy="92" r="16" fill="#38bdf8"/>
+  <text x="120" y="98" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="16" font-weight="600">High-value order</text>
+  <text x="120" y="124" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="13">RetailCRM ’ sync ’ alert (stylized)</text>
+  <text x="72" y="180" fill="#cbd5e1" font-family="monospace" font-size="13">Order #RC-12345 " 125 000 ¸ " Almaty</text>
+  <text x="72" y="210" fill="#64748b" font-family="system-ui,sans-serif" font-size="12">Replace with a real notification screenshot from your bot if you like.</text>
+</svg>

@@ -1,8 +1,25 @@
 # GBC Analytics Dashboard
 
-Краткий demo-проект для тестового задания: импорт заказов в `RetailCRM`, синхронизация в `Supabase`, web-dashboard на `Next.js` и Telegram-алерты для high-value заказов.
+[![CI](https://github.com/FUYOH666/gbc-analytics-dashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/FUYOH666/gbc-analytics-dashboard/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
+Краткий demo-проект: импорт заказов в `RetailCRM`, синхронизация в `Supabase`, web-dashboard на `Next.js` и Telegram-алерты для high-value заказов.
 
 Проект оформлен как публичный demo-case с упором на repeatable integrations, operational visibility и понятную бизнес-ценность.
+
+**Для кого этот репозиторий:** рекрутеры и техлиды, которые смотрят полный цикл интеграций; инженеры, которым нужен понятный reference по RetailCRM + Supabase + Vercel; команды, которые хотят обсудить похожий пайплайн или сотрудничество.
+
+## Для рекрутеров и коллабораций
+
+Стек: **Next.js (App Router), TypeScript, Supabase Postgres, Vitest, Vercel Cron, Telegram Bot API**. Репозиторий показывает идемпотентный sync, operational visibility (`sync_runs`, `healthz`) и осознанные границы публичного демо. Связаться: раздел [Contact](#contact), шаблон **Collaboration** в Issues, [CONTRIBUTING.md](CONTRIBUTING.md). Подробная схема потоков данных: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+
+## Screenshots
+
+Стилизованные превью (можно заменить на реальные PNG после прогона демо):
+
+| Dashboard | Telegram alert |
+|-----------|----------------|
+| ![Dashboard preview](docs/images/dashboard-preview.svg) | ![Telegram alert preview](docs/images/telegram-alert-preview.svg) |
 
 ## Live demo
 
@@ -19,6 +36,8 @@
 - `healthz` endpoint и `sync_runs` для operational visibility
 
 ## Архитектура
+
+Подробнее (диаграмма и границы модулей): [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ```text
 mock_orders.json
@@ -179,3 +198,9 @@ pnpm build
 - Website: [scanovich.ai](https://scanovich.ai/)
 - Telegram: [@ScanovichAI](https://t.me/ScanovichAI)
 - GitHub: [FUYOH666](https://github.com/FUYOH666)
+
+## Project meta
+
+- [CONTRIBUTING.md](CONTRIBUTING.md) — как запустить локально и открыть PR
+- [SECURITY.md](SECURITY.md) — ответственное раскрытие уязвимостей
+- [LICENSE](LICENSE) — MIT

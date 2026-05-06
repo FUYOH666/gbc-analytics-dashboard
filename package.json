@@ -1,6 +1,6 @@
 {
   "name": "gbc-analytics-dashboard",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "RetailCRM analytics dashboard with Supabase sync, Vercel cron, and Telegram alerts.",
   "author": "Aleksandr Mordvinov",
