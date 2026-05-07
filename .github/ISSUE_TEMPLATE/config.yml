@@ -1,8 +1,8 @@
 blank_issues_enabled: true
 contact_links:
   - name: Security vulnerability
-    url: https://github.com/FUYOH666/gbc-analytics-dashboard/security/advisories/new
+    url: https://github.com/FUYOH666/retail-crm-analytics-demo/security/advisories/new
     about: Report security issues privately via GitHub Security Advisories (preferred).
   - name: Maintainer contact
-    url: https://github.com/FUYOH666/gbc-analytics-dashboard#contact
+    url: https://github.com/FUYOH666/retail-crm-analytics-demo#contact
     about: General contact links from the README (website, Telegram).

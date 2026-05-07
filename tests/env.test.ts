@@ -12,7 +12,7 @@ describe("hasConfiguredValue", () => {
   });
 
   it("returns true for real-looking values", () => {
-    expect(hasConfiguredValue("https://bibyqsaockrxnjzjokft.supabase.co")).toBe(
+    expect(hasConfiguredValue("https://abcdefghijklmnop.supabase.co")).toBe(
       true,
     );
     expect(hasConfiguredValue("sb_publishable_example")).toBe(true);

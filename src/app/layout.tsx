@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "GBC Analytics Dashboard",
+  title: "Retail CRM Analytics Demo",
   description: "RetailCRM order analytics, sync monitoring, and Telegram alerts.",
 };
 

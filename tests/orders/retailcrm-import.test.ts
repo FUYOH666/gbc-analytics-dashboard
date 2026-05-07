@@ -9,18 +9,18 @@ import {
 } from "@/lib/orders/import-payload";
 
 const sampleOrder: MockOrder = {
-  firstName: "Айгуль",
-  lastName: "Касымова",
-  phone: "+77001234501",
-  email: "aigul.kasymova@example.com",
+  firstName: "Buyer",
+  lastName: "001",
+  phone: "+100000001",
+  email: "buyer001@example.com",
   orderType: "eshop-individual",
   orderMethod: "shopping-cart",
   status: "new",
-  items: [{ productName: "Nova Classic", quantity: 2, initialPrice: 15000 }],
+  items: [{ productName: "Demo SKU-01", quantity: 2, initialPrice: 15000 }],
   delivery: {
     address: {
-      city: "Алматы",
-      text: "ул. Абая 150, кв 12",
+      city: "Demo City A",
+      text: "Demo Street 1, unit 1",
     },
   },
   customFields: {
@@ -31,10 +31,10 @@ const sampleOrder: MockOrder = {
 describe("buildRetailCrmExternalId", () => {
   it("creates deterministic ids for re-runs", () => {
     expect(buildRetailCrmExternalId(sampleOrder, 0)).toBe(
-      "mock-order-001-aigul-kasymova-01",
+      "mock-order-001-buyer-001-01",
     );
     expect(buildRetailCrmExternalId(sampleOrder, 11)).toBe(
-      "mock-order-012-aigul-kasymova-01",
+      "mock-order-012-buyer-001-01",
     );
   });
 });
@@ -43,18 +43,18 @@ describe("buildRetailCrmUploadOrdersPayload", () => {
   it("builds upload payload with site and derived timestamps", () => {
     const payload = buildRetailCrmUploadOrdersPayload(
       [sampleOrder],
-      "nova-shop",
+      "demo-site",
       new Date("2026-04-14T12:00:00.000Z"),
     );
 
-    expect(payload.site).toBe("nova-shop");
+    expect(payload.site).toBe("demo-site");
     expect(payload.orders).toHaveLength(1);
     expect(payload.orders[0]).toMatchObject({
-      externalId: "mock-order-001-aigul-kasymova-01",
-      firstName: "Айгуль",
-      lastName: "Касымова",
-      phone: "+77001234501",
-      email: "aigul.kasymova@example.com",
+      externalId: "mock-order-001-buyer-001-01",
+      firstName: "Buyer",
+      lastName: "001",
+      phone: "+100000001",
+      email: "buyer001@example.com",
       orderMethod: "shopping-cart",
       status: "new",
       countryIso: "KZ",
@@ -64,12 +64,12 @@ describe("buildRetailCrmUploadOrdersPayload", () => {
     });
 
     expect(payload.orders[0].delivery.address).toEqual({
-      city: "Алматы",
-      text: "ул. Абая 150, кв 12",
+      city: "Demo City A",
+      text: "Demo Street 1, unit 1",
     });
     expect(payload.orders[0].items).toEqual([
       {
-        productName: "Nova Classic",
+        productName: "Demo SKU-01",
         quantity: 2,
         initialPrice: 15000,
       },
@@ -99,18 +99,22 @@ describe("filterOrdersForImport", () => {
       sampleOrder,
       {
         ...sampleOrder,
-        firstName: "Дина",
-        lastName: "Жуматова",
-        phone: "+77012345602",
+        firstName: "Buyer",
+        lastName: "002",
+        phone: "+100000002",
+        items: [
+          { productName: "Demo SKU-01", quantity: 1, initialPrice: 15000 },
+          { productName: "Demo SKU-02", quantity: 1, initialPrice: 15000 },
+        ],
       },
     ];
 
-    const filtered = filterOrdersForImport(orders, new Set(["mock-order-001-aigul-kasymova-01"]));
+    const filtered = filterOrdersForImport(orders, new Set(["mock-order-001-buyer-001-01"]));
 
     expect(filtered.alreadyExistingCount).toBe(1);
     expect(filtered.missing).toHaveLength(1);
     expect(buildRetailCrmExternalId(filtered.missing[0].order, filtered.missing[0].sourceIndex)).toBe(
-      "mock-order-002-dina-zhumatova-01",
+      "mock-order-002-buyer-002-02",
     );
   });
 
@@ -119,27 +123,36 @@ describe("filterOrdersForImport", () => {
       sampleOrder,
       {
         ...sampleOrder,
-        firstName: "Дина",
-        lastName: "Жуматова",
-        phone: "+77012345602",
+        firstName: "Buyer",
+        lastName: "002",
+        phone: "+100000002",
+        items: [
+          { productName: "Demo SKU-01", quantity: 1, initialPrice: 15000 },
+          { productName: "Demo SKU-02", quantity: 1, initialPrice: 15000 },
+        ],
       },
       {
         ...sampleOrder,
-        firstName: "Нургуль",
-        lastName: "Ахметова",
-        phone: "+77023456703",
+        firstName: "Buyer",
+        lastName: "003",
+        phone: "+100000003",
+        items: [
+          { productName: "Demo SKU-01", quantity: 1, initialPrice: 15000 },
+          { productName: "Demo SKU-02", quantity: 1, initialPrice: 15000 },
+          { productName: "Demo SKU-03", quantity: 1, initialPrice: 12000 },
+        ],
       },
     ];
 
     const filtered = filterOrdersForImport(
       orders,
-      new Set(["mock-order-001-aigul-kasymova-01", "mock-order-002-dina-zhumatova-01"]),
+      new Set(["mock-order-001-buyer-001-01", "mock-order-002-buyer-002-02"]),
     );
 
     expect(filtered.missing).toHaveLength(1);
     expect(filtered.missing[0].sourceIndex).toBe(2);
     expect(
       buildRetailCrmExternalId(filtered.missing[0].order, filtered.missing[0].sourceIndex),
-    ).toBe("mock-order-003-nurgul-ahmetova-01");
+    ).toBe("mock-order-003-buyer-003-03");
   });
 });

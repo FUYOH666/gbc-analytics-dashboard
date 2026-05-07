@@ -1,7 +1,7 @@
 export async function GET() {
   return Response.json({
     status: "ok",
-    service: "gbc-analytics-dashboard",
+    service: "retail-crm-analytics-demo",
     timestamp: new Date().toISOString(),
   });
 }

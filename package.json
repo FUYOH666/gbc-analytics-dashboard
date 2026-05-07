@@ -1,16 +1,16 @@
 {
-  "name": "gbc-analytics-dashboard",
-  "version": "0.2.0",
+  "name": "retail-crm-analytics-demo",
+  "version": "0.3.0",
   "private": true,
   "description": "RetailCRM analytics dashboard with Supabase sync, Vercel cron, and Telegram alerts.",
   "author": "Aleksandr Mordvinov",
   "homepage": "https://scanovich.ai/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/FUYOH666/gbc-analytics-dashboard.git"
+    "url": "https://github.com/FUYOH666/retail-crm-analytics-demo.git"
   },
   "bugs": {
-    "url": "https://github.com/FUYOH666/gbc-analytics-dashboard/issues"
+    "url": "https://github.com/FUYOH666/retail-crm-analytics-demo/issues"
   },
   "scripts": {
     "dev": "next dev --port 3001",

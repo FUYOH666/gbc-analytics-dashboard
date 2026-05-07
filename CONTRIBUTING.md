@@ -40,3 +40,5 @@ pnpm build
 ## Questions and collaboration
 
 For hiring or partnership inquiries, use the contacts in [README.md](README.md) or open an issue with the **Collaboration** template.
+
+Если вы переименовали репозиторий на GitHub, проверьте remote и бейджи CI — см. раздел **«Переименование GitHub и Vercel»** в [README.md](README.md).

@@ -10,9 +10,9 @@ Please **do not** open a public GitHub issue for undisclosed security vulnerabil
 
 **Preferred options:**
 
-1. Use [GitHub private vulnerability reporting](https://github.com/FUYOH666/gbc-analytics-dashboard/security/advisories/new) if enabled for the repository.
+1. Use [GitHub private vulnerability reporting](https://github.com/FUYOH666/retail-crm-analytics-demo/security/advisories/new) if enabled for the repository.
 
-2. Or contact the maintainer via the channels listed in [README.md](README.md) (e.g. website or Telegram), with a clear subject line such as `[Security] gbc-analytics-dashboard`.
+2. Or contact the maintainer via the channels listed in [README.md](README.md) (e.g. website or Telegram), with a clear subject line such as `[Security] retail-crm-analytics-demo`.
 
 ## What to include
 

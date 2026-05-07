@@ -8,21 +8,21 @@ import {
 describe("buildRetailCrmFormBody", () => {
   it("serializes nested payload fields as JSON strings", () => {
     const body = buildRetailCrmFormBody({
-      site: "fortune69",
+      site: "demo-site",
       orders: [
         {
           externalId: "mock-order-001",
-          firstName: "Айгуль",
+          firstName: "Buyer",
         },
       ],
     });
 
-    expect(body.get("site")).toBe("fortune69");
+    expect(body.get("site")).toBe("demo-site");
     expect(body.get("orders")).toBe(
       JSON.stringify([
         {
           externalId: "mock-order-001",
-          firstName: "Айгуль",
+          firstName: "Buyer",
         },
       ]),
     );

@@ -1,6 +1,6 @@
 # Architecture
 
-This document is a concise map of how **GBC Analytics Dashboard** moves data and where responsibilities live. For setup and commands, see [README.md](../README.md).
+This document is a concise map of how **Retail CRM Analytics Demo** moves data and where responsibilities live. For setup and commands, see [README.md](../README.md).
 
 ## High-level flow
 

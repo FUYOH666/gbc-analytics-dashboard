@@ -1,11 +1,11 @@
-# GBC Analytics Dashboard
+# Retail CRM Analytics Demo
 
-[![CI](https://github.com/FUYOH666/gbc-analytics-dashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/FUYOH666/gbc-analytics-dashboard/actions/workflows/ci.yml)
+[![CI](https://github.com/FUYOH666/retail-crm-analytics-demo/actions/workflows/ci.yml/badge.svg)](https://github.com/FUYOH666/retail-crm-analytics-demo/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 Краткий demo-проект: импорт заказов в `RetailCRM`, синхронизация в `Supabase`, web-dashboard на `Next.js` и Telegram-алерты для high-value заказов.
 
-Проект оформлен как публичный demo-case с упором на repeatable integrations, operational visibility и понятную бизнес-ценность.
+Проект оформлен как публичный demo-case с упором на repeatable integrations, operational visibility и понятную бизнес-ценность. Демо-данные в `mock_orders.json` вымышленные (нейтральные SKU и «Buyer NNN»), без привязки к реальным компаниям.
 
 **Для кого этот репозиторий:** рекрутеры и техлиды, которые смотрят полный цикл интеграций; инженеры, которым нужен понятный reference по RetailCRM + Supabase + Vercel; команды, которые хотят обсудить похожий пайплайн или сотрудничество.
 
@@ -23,8 +23,14 @@
 
 ## Live demo
 
-- Production: [gbc-analytics-dashboard-teal.vercel.app](https://gbc-analytics-dashboard-teal.vercel.app/)
-- GitHub: [FUYOH666/gbc-analytics-dashboard](https://github.com/FUYOH666/gbc-analytics-dashboard)
+Публичный деплой на Vercel ранее был удалён; **отдельного MCP/API для Vercel в текущем окружении нет** — проверить или восстановить проект в дашборде Vercel может только владелец аккаунта.
+
+Как посмотреть демо сейчас:
+
+- **Локально:** см. раздел «Локальный запуск» ниже и файл `.env.local`.
+- **Снова в облаке:** раздел «Деплой»: подключить репозиторий к Vercel, задать env, затем можно снова указать публичный URL в этой секции.
+
+Техническая ссылка на репозиторий: [FUYOH666/retail-crm-analytics-demo](https://github.com/FUYOH666/retail-crm-analytics-demo) (после [переименования на GitHub](#переименование-github-и-vercel) старый slug может редиректить).
 
 ## Что реализовано
 
@@ -198,6 +204,17 @@ pnpm build
 - Website: [scanovich.ai](https://scanovich.ai/)
 - Telegram: [@ScanovichAI](https://t.me/ScanovichAI)
 - GitHub: [FUYOH666](https://github.com/FUYOH666)
+
+## Переименование GitHub и Vercel
+
+В коде и `package.json` зафиксирован целевой slug **`retail-crm-analytics-demo`**. Пока репозиторий на GitHub ещё не переименован, выполните вручную:
+
+1. **GitHub:** Settings → General → Repository name → `retail-crm-analytics-demo` (после переименования обновятся бейдж CI и ссылки).
+2. **Remote:** `git remote set-url origin git@github.com:FUYOH666/retail-crm-analytics-demo.git` (или HTTPS-эквивалент).
+3. **Vercel:** создайте новый проект из репозитория или восстановите деплой; задайте переменные окружения; добавьте публичный URL в блок [Live demo](#live-demo).
+4. **Supabase:** данные прошлых импортов не меняются автоматически; при необходимости очистите тестовые таблицы или заведите новый проект.
+
+История git до этого коммита может содержать старые строки; для полного удаления из истории нужны отдельные инструменты (`git filter-repo` и т.п.).
 
 ## Project meta
 

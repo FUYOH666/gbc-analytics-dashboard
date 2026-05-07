@@ -8,24 +8,24 @@ import {
 const orders = [
   {
     retailcrm_order_id: "101",
-    customer_name: "Айгуль Касымова",
+    customer_name: "Buyer 001",
     total_amount: 45000,
     status: "new",
-    city: "Алматы",
+    city: "Demo City A",
   },
   {
     retailcrm_order_id: "102",
-    customer_name: "Дина Жуматова",
+    customer_name: "Buyer 002",
     total_amount: 62000,
     status: "new",
-    city: "Астана",
+    city: "Demo City B",
   },
   {
     retailcrm_order_id: "103",
-    customer_name: "Нургуль Ахметова",
+    customer_name: "Buyer 003",
     total_amount: 89000,
     status: "new",
-    city: "Шымкент",
+    city: "Demo City C",
   },
 ];
 

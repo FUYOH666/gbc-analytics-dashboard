@@ -73,7 +73,7 @@ export default async function HomePage() {
               ? "Dashboard подключён к данным"
               : "Требуется настройка интеграции"}
           </div>
-          <h1>GBC Analytics Dashboard</h1>
+          <h1>Retail CRM Analytics Demo</h1>
           <p>
             Мини-система аналитики и operational visibility для заказов из
             RetailCRM: импорт mock данных, sync в Supabase, KPI, график и
