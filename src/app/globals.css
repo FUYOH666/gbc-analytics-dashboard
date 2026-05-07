@@ -173,7 +173,9 @@ select {
 
 .chart-shell {
   width: 100%;
+  min-width: 0;
   height: 360px;
+  min-height: 360px;
 }
 
 .actions {
